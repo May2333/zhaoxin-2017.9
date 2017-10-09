@@ -1,0 +1,10 @@
+INSERT INTO `choice_question` VALUES (1, 0, '你是猪吗', '不是', '是', '不确定', 'B', 'B');
+INSERT INTO `choice_question` VALUES (2, 0, 'Are you pig?', 'No', 'Yes', 'Not sure.', 'B', 'B');
+INSERT INTO `choice_question` VALUES (3, 0, '你是猪吗', '不是', '是', '不确定', 'B', 'B');
+INSERT INTO `choice_question` VALUES (4, 0, '你是猪吗', '不是', '是', '不确定', 'B', 'B');
+INSERT INTO `choice_question` VALUES (5, 0, '你是猪吗', '不是', '是', '不确定', 'B', 'B');
+INSERT INTO `choice_question` VALUES (6, 0, '你是优秀的猪猪男孩吗', '不是', '是', '不确定', 'B', 'B');
+INSERT INTO `choice_question` VALUES (7, 0, '你是优秀的猪猪男孩吗', '不是', '是', '不确定', 'B', 'B');
+INSERT INTO `choice_question` VALUES (8, 0, '你是优秀的猪猪男孩吗', '不是', '是', '不确定', 'B', 'B');
+INSERT INTO `choice_question` VALUES (9, 0, '你是优秀的猪猪女孩吗', '不是', '是', '不确定', 'B', 'B');
+INSERT INTO `choice_question` VALUES (10, 0, '你是优秀的猪猪女孩吗', '不是', '是', '不确定', 'B', 'B');

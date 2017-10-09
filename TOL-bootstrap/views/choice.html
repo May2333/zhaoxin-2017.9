@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>YF105-招新答题系统</title>
+	<style>
+		body{margin: 0;width:100%;height: 100%;background: #f7fafc}
+		canvas{width: 100%;height: 100%;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<script type="text/javascript">
+    	/*刷新不重置计时*/
+		var maxtime;
+		if(window.name==''){
+			maxtime = 60*60;
+		}else{
+			maxtime = window.name;
+		}
+		function CountDown(){
+			if(maxtime>=0){
+				// if(maxtime>=3595) {
+				minutes = Math.floor(maxtime/60);
+				seconds = Math.floor(maxtime%60);
+				msg = "距离考试结束仅剩"+minutes+"分"+seconds+"秒";
+				// document.all["timer"].innerHTML = msg;
+				document.getElementById("clock").innerHTML = msg;
+				if(maxtime == 5*60) alert('注意，还有5分钟!');
+				--maxtime;
+				window.name = maxtime; 
+			}
+			else{
+				clearInterval(timer);
+				// alert("考试时间到，结束!");
+				var blank = document.querySelector('.blank');
+    			var back = document.querySelector('#back');
+				var save = document.querySelector('#save');
+    			var overFlag = document.createElement('div');
+    			overFlag.className = 'overFlag';
+    			// overFlag.style.display = 'none';
+    			document.body.appendChild(overFlag);
+    
+				document.querySelector('.submit').click();
+			}
+		}
+		timer = setInterval("CountDown()",1000);
+	</script>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript" src='../static/js/main.js'></script>
+	
+</head>
+<body onload="CountDown()">
+	<!-- <div class="overFlag"></div> -->
+	<div class="index-body2">
+		<p class="name"><img src="../static/img/location.png" alt="logo" style="vertical-align: middle">YF105-招新答题系统</p>
+		<p style="background-color: lightgray;vertical-align: middle;text-align: center;">
+			<img src="../static/img/start_test.png" class="icon">距离考试结束仅剩<span id="clock"></span>
+		</p>
+		<!-- <form action="zhaoxin/submit" method="POST" class="myForm"> -->
+		<div id="part1">
+			
+			<div class="blank">
+			<h2>第一部分 选择题</h2>
+			{% for choice_index in choice_show %}
+				
+			<h3 class="question">{{ choice_index['choice_id'] }}.{{ choice_index['choice_question'] }}</h3>
+			<input type="radio" name="{{choice_index['choice_id']}}" value="A" class="choose_a">A.{{ choice_index['A'] }}
+			<br>
+			<input type="radio" name="{{choice_index['choice_id']}}" value="B" class="choose_b">B.{{ choice_index['B'] }}
+			<br>
+			<input type="radio" name="{{choice_index['choice_id']}}" value="C" class="choose_c">C.{{ choice_index['C'] }}
+			<br>
+			<input type="radio" name="{{choice_index['choice_id']}}" value="D" class="choose_d">D.{{ choice_index['D'] }}
+			
+			{% endfor %}
+			</div>	
+
+			<input id="back" value="返回上一页" type="button" class="btns">
+			<input id="save" value="进入下一页" type="submit" class="btns submit">
+			
+			<!-- <input type="submit" value="提交" class="submit"> -->
+
+					
+		</div>
+		<!-- </form> -->
+	</div>
+	<script type="text/javascript" src='../static/js/choice-ajax.js'></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<style>
+		body{margin: 0;width:100%;height: 100%;background: #f7fafc}
+		canvas{width: 100%;height: 100%;}
+	</style>
+	<!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../static/css/signIn.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<script src="../static/css/iconfont.js"></script>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript" src='../static/js/main.js'></script>
+</head>
+<body>
+<div class="index-body1">
+
+	<div class="header text-center">
+		<svg class="icon" aria-hidden="true">
+		  <use xlink:href="#icon-location"></use>
+		</svg>
+		<div class="name">YF105</div>
+		<h3 class="words">招新答题系统</h3>
+	</div>
+
+	<div class="choose text-center ">
+	
+		<div class="choose-div" style="border-bottom: 1px solid #009999;"><a style="color:#009999">报名</a></div>
+		<div class="choose-div" style="color:#333"><a>登录</a></div>
+	</div>
+
+	<!--  register ==0-->
+	<div class="col-center-block form-horizontal" id="register">
+		<!-- <form class="form-horizontal " role="form"> -->
+		<div class="form-group  ">
+			<div class="col-sm-5">
+				<input type="text" class="form-control " placeholder="请输入您的姓名" name="name-register">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="name-err-register err" style="color: red;"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-5 ">
+				<input type="password" class="form-control" placeholder="请输入您的学号(用作密码)" name="password-register1">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="password-err-register1 err" style="color: red;"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-5 ">
+				<input type="password" class="form-control" placeholder="请确认您的学号" name="password-register2">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="password-err-register2 err" style="color: red;"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-5 ">
+				<input type="submit" class="form-control submit-btn" value="加入YF105">
+			</div>
+		</div>
+		<!-- </form> -->
+	</div>
+
+	<!-- login==1 -->
+	<div class="col-center-block form-horizontal" id="signin">
+		<!-- <form class="form-horizontal " role="form"> -->
+		<div class="form-group  ">
+			<div class="col-sm-5">
+				<input type="text" class="form-control " placeholder="姓名" name="name-login">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="name-err-login err" style="color: red;"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-5 ">
+				<input type="password" class="form-control" placeholder="密码(学号)" name="password-login">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="password-err-login err" style="color: red;"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-5 ">
+				<input type="submit" class="form-control submit-btn" value="登录答题">
+			</div>
+		</div>
+		<!-- </form> -->
+	</div>
+	
+</div>
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/signin.js"></script>
+<script type="text/javascript" src="../static/js/signin-ajax.js"></script>
+</body>
+</html>

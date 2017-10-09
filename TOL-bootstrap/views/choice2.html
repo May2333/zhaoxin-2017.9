@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>YF105-招新答题系统</title>
+	<style>
+		body{margin: 0;width:100%;height: 100%;background: #f7fafc}
+		canvas{width: 100%;height: 100%;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<script type="text/javascript">
+		var timeLeft = 60 * 60 * 1000;//3600秒
+		function countTime(){
+   			var startMinutes = parseInt(timeLeft / 1000 / 60); 
+    		var startSec = parseInt((timeLeft - startMinutes * 60 * 1000) / 1000); 
+    		document.getElementById('clock').innerHTML = startMinutes + "分" + startSec + "秒";
+    		timeLeft -= 1000;  
+    		setTimeout('countTime()',1000); 
+    		if( startMinutes==59 && startSec==33 ) {
+    			document.querySelector('.myForm').submit();
+    		}
+    	}
+	</script>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript" src='../static/js/main.js'></script>
+	<script type="text/javascript" src='../static/js/refresh.js'></script>
+</head>
+<body onload="countTime()">
+	<div class="index-body2">
+		<p class="name"><img src="../static/img/location.png" alt="logo" style="vertical-align: middle">YF105-招新答题系统</p>
+		<p style="background-color: lightgray;vertical-align: middle;text-align: center;">
+			<img src="../static/img/start_test.png" class="icon">距离考试结束仅剩<span id="clock"></span>
+		</p>
+		<form action="zhaoxin/submit" method="POST" class="myForm">
+		<div id="part1">
+			<h2>第一部分 选择题</h2>
+			{% for choice_index in choice_show %}		
+			<h3>{{ choice_index['id'] }}.{{ choice_index['question'] }}</h3>
+			<input type="radio" name="radio1" value="11">A.{{ choice_index['A'] }}
+			<br>
+			<input type="radio" name="radio1" value="12">B.{{ choice_index['B'] }}
+			<br>
+			<input type="radio" name="radio1" value="13">C.{{ choice_index['C'] }}
+			<br>
+			<input type="radio" name="radio1" value="14">D.{{ choice_index['D'] }}
+			{% endfor %}
+
+			
+			<input type="submit" value="提交" class="submit">			
+		</div>
+		</form>
+	</div>
+</body>
+</html>

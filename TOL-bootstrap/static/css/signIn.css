@@ -1,0 +1,66 @@
+a {
+	color: #333;
+}
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+.header {
+	font-size: 50px ;
+	/*margin-top: 8%;*/
+}
+.header .icon{
+	display: inline-block;
+	font-size: 13px;
+}
+.header .name{
+	display: inline-block;
+	color: #009999;
+}
+.words {
+	margin-top: 0px;
+}
+
+
+.choose {
+	height: 50px;
+	font-size: 18px;
+	font-family: 微软雅黑;
+	line-height: 50px;
+	
+
+}
+.choose div {
+	display: inline-block;
+	width: 72px;
+	height: 35px;
+	line-height: 35px;
+	cursor: pointer;
+}
+
+.col-center-block {
+    margin-left: 38%;
+    /*margin: 0 auto !important;*/
+}
+
+.submit-btn {
+	background-color: #009999;
+	color: white;
+}
+
+#signin {
+	display: none;
+}
+#register {
+	display: block;
+}
+.err {
+	margin-left: 20px; 
+	text-align: left;
+}
